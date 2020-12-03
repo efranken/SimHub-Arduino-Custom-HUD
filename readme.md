@@ -5,6 +5,7 @@
 Instructions specific to Arduino Nano Every
 
 ![enter image description here](https://i.imgur.com/RLqtLm3.gif)
+
 Project requires:
 
  - 1x Arduino Nano Every 
