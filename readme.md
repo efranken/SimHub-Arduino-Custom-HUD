@@ -1,26 +1,42 @@
-SIMHUB Arduino RPM indicator readme
+﻿
 
-Arduino wiring - diagram included in repository as WiringDiagram.jpeg
-    Neopixel setup
-        Place 2 strips together end to end, flip over, solder all 4 pads straight across
-        Wire GND to Arduino GND
-        Wire 4-7VDC to 5v on Arduino
-        Wire DIN to D6 on Arduino     
-            This was SimHub specific for the Arduino Nano Every, I'm not sure if it changes per board
+# SIMHUB Arduino RPM indicator readme
+
+Instructions specific to Arduino Nano Every
+
+![enter image description here](https://i.imgur.com/RLqtLm3.gif)
+Project requires:
+
+ - 1x Arduino Nano Every 
+ - 1x SSD1306 128x64px OLED screen
+ -    2x 8 pixel Neopixel strips   
+ - 3d printed case (STL included in repository)  
+ - SimHub software
+
+## Neopixel setup
+
+    Place 2 strips together end to end, flip over, solder all 4 pads straight across 
+    Wire GND to Arduino GND 
+    Wire 4-7VDC to 5v on Arduino 
+    Wire DIN to D6 on Arduino 
+
             
-    OLED setup - SSD1306 128x64
-        Desolder pins on GND, VCC, SCL, SDA if necessary
-        Wire GND to Arduino GND
-        Wire VCC to 5v on Arduino
-        Wire SCL to A5 on Arduino
-        Wire SDA to A4 on Arduino
-            SCL and SDA pins for Arduino Nano Every, may change per board
-        
+
+## OLED setup - SSD1306 128x64
+
+    Desolder pins on GND, VCC, SCL, SDA if necessary
+    Wire GND to Arduino GND
+    Wire VCC to 5v on Arduino
+    Wire SCL to A5 on Arduino
+    Wire SDA to A4 on Arduino
+    SCL and SDA pins for Arduino Nano Every, may change per board
+
 Everything can now be placed in the case.
 
 
 
-SIMHUB setup
+## SIMHUB setup
+
     Plug in Arduino
     Open Arduino, go to My Hardware
     Set WS2812B leds count to 16
@@ -57,3 +73,5 @@ SIMHUB setup
             Align=3
     Upload sketch to Arduino from the Arduino IDE
     After you get it where you want, back up the files in SimHub\_Addons\Arduino\DisplayClientV2
+
+
