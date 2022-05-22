@@ -38,12 +38,17 @@ Everything can now be placed in the case.
 
 ## SIMHUB setup
 
+	- Note that the file DisplayClientV2 folder contains the final working code for MY SPECIFIC setup.  May not work the same for you.
+	- I had to write this for a Nano Every, the SimHub built in editor appears to not want to upload to it.
+	- If you use a different model of Arduino, you may be able to use the built in editor instead of Arduino IDE
+
     Plug in Arduino
     Open Arduino, go to My Hardware
     Set WS2812B leds count to 16
+	Set WS2812B data pin to 6
     Set OLED LCD enabled
     Click open in Arduino IDE
-    As you can see, the only 2 lines in the includes that aren't commented are the LCD and LED ones
+    As you can see, the only 2 lines in the includes that aren't commented are WS2812B and OLED
     If you want to modify how the gear selection displays -
         Go to SHGLCD_I2COLED.h file
         setRotation value can be changed to change orientation of text
@@ -72,7 +77,28 @@ Everything can now be placed in the case.
             FontSize=3
             FontType=2
             Align=3
+		At some point that stopped working, and I had to change to this
+			[Text]
+			X=62
+			Y=30
+			Color=1
+			Text=[DataCorePlugin.GameData.NewData.Gear]
+			FontSize=10
+			FontType=0
+			Align=3
+		If you want the date and time idle display to work, modify part1.ini under \Idle\TurboChanged
+			I didn't edit this on mine so I don't have a file for it
     Upload sketch to Arduino from the Arduino IDE
     After you get it where you want, back up the files in SimHub\_Addons\Arduino\DisplayClientV2
+	
+## Troubleshooting
+	Simhub connects, then disconnects Arduino and never displays data
+		Make sure baud rate is set to 19200
+	
+	Gear position is flipped upside down, or does not display properly
+		Try the second block for the display listed in this Readme.
+		Change X and Y coords until you get something displayed.
+		Change font size and align until you get something displayed.
+		Once something displays on the screen, fine tune the settings.
 
 
